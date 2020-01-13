@@ -1,12 +1,11 @@
 import random
 
 def get_word():
-    txt_file = open('hangman/words_list.txt', 'r')
+    txt_file = open('hangman/sorted_words_list.txt', 'r')
     file_data = txt_file.read().split('\n')
     words_list = []
     for word in file_data:
-        if len(word) > 4 and len(word) <= 6:
-            words_list.append(word)
+        words_list.append(word)
 
     words_list = tuple(words_list)
     word = random.choice(words_list)
@@ -58,13 +57,15 @@ def hangman():
                 not_hanged = False
 
     if not_winner:
-        print('\nLooser, you just hanged the man!\nThe word was:', actual_word)
-        print('__________')
-        print('|    |')
-        print('|    O')
-        print('|   / \\')
-        print('|    |')
-        print('|   / \\')
+        print('\nLooser, you just hanged the man!')
+        print("""__________
+|    |
+|    O
+|   / \\
+|    |
+|   / \\
+        """)
+        print('The word was:', actual_word)
     else:
         print('\nHooray, you just saved the man!\nThe word is:', actual_word)
 

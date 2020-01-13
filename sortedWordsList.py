@@ -1,4 +1,4 @@
-txt_file = open('hangman/words_list.txt')
+txt_file = open('hangman/raw_words_list.txt')
 words_list = txt_file.read().split('\n')
 
 new_file = open('hangman/sorted_word_list.txt', 'w')
